@@ -27,7 +27,7 @@ function App() {
       
     }
     else{
-      baseUrl = "https://lazy-pear-caterpillar-slip.cyclic.app"
+      baseUrl = "https://sore-teal-chinchilla-sock.cyclic.app/"
     }
   
 

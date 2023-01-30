@@ -14,7 +14,7 @@ if (window.location.href.split(":")[0] === "http") {
   
 }
 else{
-    baseUrl = "https://lazy-pear-caterpillar-slip.cyclic.app"
+    baseUrl = "https://sore-teal-chinchilla-sock.cyclic.app/"
   }
 
 function Signup() {
