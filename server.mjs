@@ -14,9 +14,6 @@ import { userModel,otpModel,tweetModel } from './routes/dbmodels.mjs'
 import sgMail from "@sendgrid/mail"
 
 
-
-
-
 const SECRET = process.env.SECRET || "mySecret"
 const app = express()
 const port = process.env.PORT || 3000
@@ -99,7 +96,6 @@ const getUser = async (req, res) => {
     }
 }
 
-
 app.get('/api/v1/profile', getUser)
 app.get('/api/v1/profile/:id', getUser)
 
@@ -165,15 +161,12 @@ app.post("/api/v1/updateProfileImg", async (req, res) =>{
             message: "profile image changed success",
         });
         return;
-
     }
 
     catch (error) {
         console.log("error: ", error);
         res.status(500).send(error.message)
     }
-
-
 })
 
 app.post("/api/v1/uploadCoverPhoto", async (req, res) =>{
@@ -186,14 +179,13 @@ app.post("/api/v1/uploadCoverPhoto", async (req, res) =>{
             { _id: _id },
             "coverPhoto",
         ).exec()
-        if (!user) throw new Error("User not found")
+        if (!user) throw new Error("User not found");
 
         await userModel.updateOne({ _id: _id }, { coverPhoto: coverPhoto }).exec()
   
         res.send({
             message: "cover image changed success",
-        });
-      
+        }); 
         return;
 
     }
@@ -202,7 +194,6 @@ app.post("/api/v1/uploadCoverPhoto", async (req, res) =>{
         console.log("error: ", error);
         res.status(500).send(error.message)
     }
-
 
 })
 
@@ -215,32 +206,23 @@ app.put("/api/v1/deleteCoverPhoto", async (req, res) =>{
             { _id: _id },
         ).exec()
         if (!user){
-            throw new Error("User not found") 
-            
-
+            throw new Error("User not found");
         }
         else{
             let data = await userModel.findByIdAndUpdate(_id,
                 {
                     coverPhoto: "",
-                  
                 },
                 { new: true }
             ).exec();
     
-            console.log('updated: ', data);
-    
+            console.log('updated: ', data);    
             res.send({
                 message: "cover image remove success",
             });
         }
-
-
-
   
-        
-      
-        return;
+       return;
 
     }
 
@@ -248,7 +230,6 @@ app.put("/api/v1/deleteCoverPhoto", async (req, res) =>{
         console.log("error: ", error);
         res.status(500).send(error.message)
     }
-
 
 })
 
@@ -278,13 +259,8 @@ app.delete('/api/v1/deleteAccount/:deleteAccountEmail', (req, res) => {
             })
         }
     });
-  
-
-    
+      
 })
-
-
-
 
 const __dirname = path.resolve();
 app.use('/', express.static(path.join(__dirname, './product/build')))
