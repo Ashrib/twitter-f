@@ -397,20 +397,6 @@ function Profile() {
 
   }
 
-  
-
-  
-
-
-
-  
-
-
-  
-
-  
-
-
 
   return (
     <div className='main-div'>
@@ -522,14 +508,9 @@ function Profile() {
       
                   <div className='drp-items'>
                 
-                  
-
-                   
+                                     
                 
-                  </div>
-
-
-                  
+                  </div>      
                   
 
              
@@ -634,10 +615,6 @@ function Profile() {
                 :
                 null
           
-                    
-
-        
-
               
         }
 

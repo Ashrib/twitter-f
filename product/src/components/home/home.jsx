@@ -255,155 +255,199 @@ setAllData(response.data.data)
   
 
   return (
-    <div className='main-div'>
-      <div className='spinner-div'>
-        <div className='spinner'>
-        <Spinner animation="grow" variant="danger" />
-        </div>
-      </div>
+//     <div className='main-div'>
+//       <div className='spinner-div'>
+//         <div className='spinner'>
+//         <Spinner animation="grow" variant="danger" />
+//         </div>
+//       </div>
+// 
+//     <div className='leftPannel'>
+// 
+//       <div className='icons'>
+//       <p title='Home'><a href="/"><img src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" height="40" width="40"  /></a> </p>
+//       <p><a href="/profile"><FaUserAlt style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a> </p>
+//       <p><BiLogOut onClick={logoutHandler} style={{fontSize:"35px",cursor:"pointer",color:"#3f3f33"}} title="Log Out"/></p>
+//       </div>
+// 
+//     </div>
+// 
+//     <div className='centre-div'>
+// 
+//       <div className='input-div'>
+//         <form onSubmit={submitHandler}>
+//           <div className='userPic'>
+//             <img src={state?.user?.profileImage} alt="Proflie Image" height="60" width="60" />
+//               <div>
+//                  <p>For Everyone</p>
+//               </div>
+//           </div>
+//         
+//           <textarea name="tweetText" ref={lastRef} id='desc' rows={3} placeholder="What's happening?" required maxLength={200} onBlur={descHandler} onChange={descLengthError}></textarea>
+//           <span className='descEmptyError'>Don't leave field empty!</span>
+//           <span className='descLengthError'>Your Value should be greater than two characters</span>
+// 
+//           
+//           <div className="image-upload">
+//             <div>
+//             <label htmlFor="imgInput">
+//               <img src="https://img.icons8.com/color/512/image-gallery.png" height="40" width="40" alt='Gallery icon' title='Upload Image'/>
+//             </label>
+// 
+//               <input type="file" name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' onChange={(e) => {
+//                  setImageUpload(e.target.files[0])
+//               }}/> <span className='optional'>*Optional</span> 
+// 
+//             </div>
+// 
+//             <div>
+//               <button type='submit' className='btn'>Tweet</button>
+//             </div>
+// 
+//          
+//     
+//           </div>
+// 
+// 
+//         </form>
+//       </div>
+// 
+// 
+//       <div className='display-div'id='display'>
+//     
+//         {
+// 
+//               (allData && allData?.length !== 0)?
+//                   <div className='posts-div'>
+// 
+//                 
+//                      { allData.map((eachData,i) => (  
+//                         <div className='posts' key={i}>
+//                           <div className='info-div'>
+//                          
+//                             <img src={eachData?.profilePhoto} alt="profilePic" width="50" height = "50" />
+//                             <p>{eachData?.userFirstName} {eachData.userLastName}</p>
+//                             <p className='date'>.{eachData?.createdOn.split('T')[0]}</p>                                       
+//                           </div>
+// 
+//                           <div className='text'>   
+//                             <p>{eachData?.text}</p>                      
+//                           </div>
+// 
+//                           <div className='tweetImage'>
+//                           {
+//                               (eachData?.image !== undefined)?
+//                               <img src={eachData.image} />
+//                               :
+//                               null
+//                             }
+//                             
+// 
+//                           </div>
+//                         
+// 
+//                         </div>
+// 
+//                       
+//                    
+//                       ))}
+// 
+//       
+// 
+// 
+//                   </div>
+//               
+// 
+//                 :
+//                 null
+//                
+//         }
+//       {/* </InfiniteScroll> */}
+//       </div>
+// 
+// 
+//       <div className='onSearchData'>
+//         
+//           <Modal
+//             show={show1}
+//             onHide={handleClose}
+//             backdrop="static"
+//             keyboard={false}
+//           >
+//             <Modal.Header closeButton>
+//               <Modal.Title>Your Data of id: {searchData?.id} </Modal.Title>
+//             </Modal.Header>
+//             <Modal.Body>
+//              
+//              <p>Name: {searchData?.name}</p>
+//              <p>Price: {searchData?.price}</p>
+//              <p>Description: {searchData?.description}</p>
+// 
+//              
+// 
+//             
+//             </Modal.Body>
+//             <Modal.Footer>
+//               <Button variant="secondary" onClick={handleClose}>
+//                 Ok.
+//               </Button>
+//             </Modal.Footer>
+//           </Modal>
+// 
+//       </div>
+// 
+//      
+// 
+// 
+// 
+// 
+//       
+//       </div>
+//     </div>
 
-    <div className='leftPannel'>
 
-      <div className='icons'>
-      <p title='Home'><a href="/"><img src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" height="40" width="40"  /></a> </p>
-      <p><a href="/profile"><FaUserAlt style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a> </p>
-      <p><BiLogOut onClick={logoutHandler} style={{fontSize:"35px",cursor:"pointer",color:"#3f3f33"}} title="Log Out"/></p>
-      </div>
 
+
+<div class="container-fluid">
+<div className="side-nav">
+  <div className="home"><a href="/"><img src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" height="40" width="40"  /></a> </div>
+  <div className="profile"><a href="/profile"><FaUserAlt style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a></div>
+  <div onClick={logoutHandler}>logout</div>
+
+</div>
+{/* Center div */}
+<div className="center-body">
+  <div className="create-tweet-div">
+    <div className='prf-img'>
+      <img src={state?.user?.profileImage} alt="Proflie Image" height="60" width="60" />
     </div>
-
-    <div className='centre-div'>
-
-      <div className='input-div'>
-        <form onSubmit={submitHandler}>
-          <div className='userPic'>
-            <img src={state?.user?.profileImage} alt="Proflie Image" height="60" width="60" />
-              <div>
-                 <p>For Everyone</p>
-              </div>
-          </div>
-        
-          <textarea name="tweetText" ref={lastRef} id='desc' rows={3} placeholder="What's happening?" required maxLength={200} onBlur={descHandler} onChange={descLengthError}></textarea>
-          <span className='descEmptyError'>Don't leave field empty!</span>
-          <span className='descLengthError'>Your Value should be greater than two characters</span>
-
-          
-          <div className="image-upload">
-            <div>
-            <label htmlFor="imgInput">
+    <form onSubmit={submitHandler}>
+      <textarea name="tweetText" ref={lastRef} id='desc' rows={3} placeholder="What's happening?"
+       required maxLength={200} onBlur={descHandler} onChange={descLengthError}></textarea>
+      <span className='descEmptyError error'>Field can't be empty!</span>
+      <span className='descLengthError error'>Your Value should be greater than two characters</span>
+      <div className="buttons-box">
+        <div className="tools" style={{backgroundColor:"#3f3f3f"}}>
+          <label htmlFor="imgInput">
               <img src="https://img.icons8.com/color/512/image-gallery.png" height="40" width="40" alt='Gallery icon' title='Upload Image'/>
-            </label>
-
-              <input type="file" name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' onChange={(e) => {
+          </label>
+            <input type="file" name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' onChange={(e) => {
                  setImageUpload(e.target.files[0])
-              }}/> <span className='optional'>*Optional</span> 
-
-            </div>
-
-            <div>
-              <button type='submit' className='btn'>Tweet</button>
-            </div>
-
-         
-    
-          </div>
-
-
-        </form>
+              }}/>
+        </div>
+        <button type='submit' className='tweet-btn'>tweet</button>
       </div>
+    </form>
+  </div>{/* create-tweet-div */}
 
+  <div className="tweets-display-container">
+    {(allData && allData?.length !== 0)?
+      <div>hit</div>
+    :null}
+  </div>{/* tweets-display-container */}
 
-      <div className='display-div'id='display'>
-    
-        {
-
-              (allData && allData?.length !== 0)?
-                  <div className='posts-div'>
-
-                
-                     { allData.map((eachData,i) => (  
-                        <div className='posts' key={i}>
-                          <div className='info-div'>
-                         
-                            <img src={eachData?.profilePhoto} alt="profilePic" width="50" height = "50" />
-                            <p>{eachData?.userFirstName} {eachData.userLastName}</p>
-                            <p className='date'>.{eachData?.createdOn.split('T')[0]}</p>                                       
-                          </div>
-
-                          <div className='text'>   
-                            <p>{eachData?.text}</p>                      
-                          </div>
-
-                          <div className='tweetImage'>
-                          {
-                              (eachData?.image !== undefined)?
-                              <img src={eachData.image} />
-                              :
-                              null
-                            }
-                            
-
-                          </div>
-                        
-
-                        </div>
-
-                      
-                   
-                      ))}
-
-      
-
-
-                  </div>
-              
-
-                :
-                null
-               
-        }
-      {/* </InfiniteScroll> */}
-      </div>
-
-
-      <div className='onSearchData'>
-        
-          <Modal
-            show={show1}
-            onHide={handleClose}
-            backdrop="static"
-            keyboard={false}
-          >
-            <Modal.Header closeButton>
-              <Modal.Title>Your Data of id: {searchData?.id} </Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-             
-             <p>Name: {searchData?.name}</p>
-             <p>Price: {searchData?.price}</p>
-             <p>Description: {searchData?.description}</p>
-
-             
-
-            
-            </Modal.Body>
-            <Modal.Footer>
-              <Button variant="secondary" onClick={handleClose}>
-                Ok.
-              </Button>
-            </Modal.Footer>
-          </Modal>
-
-      </div>
-
-     
-
-
-
-
-      
-      </div>
-    </div>
+</div>{/* Center div */}
+</div>
     
   );
 }
