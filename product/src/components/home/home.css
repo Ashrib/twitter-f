@@ -13,11 +13,13 @@
 }
 .center-body{
   background-color: wheat;
+  height: calc(100vh);
   width: 100vw;
   display: flex;
   align-items: center;
   padding: 20px 0px;
   flex-direction: column;
+  overflow: scroll;
 }
 .create-tweet-div{
   background-color: white;
@@ -48,7 +50,6 @@
   outline: 2px solid dodgerblue;
 }
 .prf-img{
-  background-color: brown;
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -61,9 +62,6 @@
 }
 .buttons-box{
   display: flex;
-  /* background-color: blanchedalmond; */
-  background-color: #f25d1d;
-  /* justify-content: space-between; */
 }
 #imgInput{
   display: none;
@@ -87,21 +85,20 @@
   color: red;
 }
 .tweets-display-container{
-  border: 1px solid red;
   width: clamp(200px,60%,500px);
   margin-top: 20px;
 }
-/* .all-tweets,.tweet{
-  width: inherit;
-} */
 .tweet{
   margin-top: 7px;
   padding: 10px 10px;
-  background-color: aliceblue;
+  padding-bottom: 20px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
 }
 .tweet-info{
-  background-color: aqua;
   display: flex;
+  padding-bottom: 4px;
+  border-bottom: 1px solid rgb(199, 199, 199);
 }
 .tweet-info>img{
   border-radius: 50%;
@@ -118,4 +115,23 @@
 .date{
   padding-top: 0px;
   font-size: 0.8em;
+}
+.tweet-content{
+  padding: 0px 6%;
+}
+.tweet-txt{
+  color: black;
+  font-weight: normal;
+}
+.tweet-content img{
+  -ms-transform: translateZ(0); /* IE 9 */
+  -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
+  transform: translateZ(0);
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;         /* Firefox */
+  image-rendering:   -o-crisp-edges;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: crisp-edges;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+  width: 100%;
 }

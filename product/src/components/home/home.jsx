@@ -427,7 +427,7 @@ setAllData(response.data.data)
       <span className='descEmptyError error'>Field can't be empty!</span>
       <span className='descLengthError error'>Your Value should be greater than two characters</span>
       <div className="buttons-box">
-        <div className="tools" style={{backgroundColor:"#3f3f3f"}}>
+        <div className="tools">
           <label htmlFor="imgInput">
               <img src="https://img.icons8.com/color/512/image-gallery.png" height="40" width="40" alt='Gallery icon' title='Upload Image'/>
           </label>
@@ -443,6 +443,7 @@ setAllData(response.data.data)
   <div className="tweets-display-container">
     {(allData && allData?.length !== 0)?
       <div className='all-tweets'>
+        {/* creating tweets div */}
         {allData.map((eachData,i) => (
             <div className="tweet" key={i}>
               <div className="tweet-info">
@@ -451,6 +452,14 @@ setAllData(response.data.data)
                   <span className='username'>{eachData?.userFirstName} {eachData.userLastName}</span><br />
                   <span className='date'>.{eachData?.createdOn.split('T')[0]}</span>
                 </div>
+              </div>
+              <div className="tweet-content">
+                <p className="tweet-txt">{eachData?.text}</p>
+                  {(eachData?.image !== undefined)?
+                    <img src={eachData.image} />
+                    :
+                    null
+                  }
               </div>
               
             </div>
