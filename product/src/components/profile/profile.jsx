@@ -382,13 +382,33 @@ function Profile() {
             <div className="images-box">
               <div className="profile-image-box" src={{backgroundImage:`url(${state?.user?.profileImage})`}}>
                 <img className='p-img' src={state?.user?.profileImage} alt="profile Image" />
-                <BsFillCameraFill style={{color:"white"}} className='camera-icon' onClick={handleShow} />
+                <BsFillCameraFill title='Change picture' style={{color:"white"}} className='camera-icon'  onClick={handleShow} />
+                <Modal show={show2} onHide={handleClose2} animation={false}>
+                  <Modal.Header closeButton>
+                    <Modal.Title>Upload Profile Picture</Modal.Title>
+                  </Modal.Header>
+                  <Modal.Body className='modal-body'>
+                    <label htmlFor="imgInput">
+                      <p style={{cursor:"pointer"}}  className='upload-btn'>
+                        <AiOutlinePlus className='plus-icon'/> Upload Photo
+                      </p>
+                    </label>
+                    <input style={{display:"none"}} type="file" name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' 
+                    onChange={(e) => setImageUpload(e.target.files[0])}/>
+                  </Modal.Body>
+                  <Modal.Footer>
+                    <Button variant="primary" onClick={updateProfilePhotoHandler}>
+                      Update Changes
+                    </Button>
+                  </Modal.Footer>
+                </Modal>
+
+
               </div>
               <div className="cover-image-box" style={{backgroundImage:`url(${state?.user?.coverPhoto})`}}>
               <Dropdown className='drp'>
                   <Dropdown.Toggle className='cover-btn' id="dropdown-button-dark-example1" variant="secondary">
-                      <BsFillCameraFill className='camera-icon'  />Edit Cover Photo
-
+                      <BsFillCameraFill className='camera-icon'/> Edit Cover Photo
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu variant="dark" className='menu'>
@@ -431,12 +451,67 @@ function Profile() {
                 <span style={{fontSize:'0.9em'}} className='userDate'> Joined {state?.user?.createdOn.split('T')[0]}</span>
               </span>
             </div>{/* details end */}
-            <div className="tweets">
-              
+            <div className="tweets-container">
+            {(allData && allData?.length !== 0)?
+            <div className="display-tweets">
+              { allData.map((eachData,i) => (  
+                <div className='tweet' key={i}>
+                  <div className="tweet-info">
+                  <img src={eachData?.profilePhoto} alt="profilePic" width="50" height = "50" />
+                  <div>
+                    <span className='username'>{eachData?.userFirstName} {eachData.userLastName}</span><br />
+                    <span className='date'>.{eachData?.createdOn.split('T')[0]}</span>
+                  </div>
+                  <div className='tweet-options'>
+                  <img src="https://img.icons8.com/material-sharp/2x/edit--v3.png" title="Edit"  width="20" height="20" 
+                  onClick={()=>{
+                    handleData(setEditId(eachData?._id),setEditTweet(eachData?.text))
+                       }}/>
+                  </div>
+              </div>
+              <div className="tweet-content">
+                <p className="tweet-txt">{eachData?.text}</p>
+                  {(eachData?.image !== undefined)?
+                    <img src={eachData.image} />
+                    :
+                    null
+                  }
+              </div>
+                </div>
+                )
+              )}
+            </div>
+            :
+            null}
             </div>
           </div>
         </div>
       </div>
+      <Modal
+            show={show}
+            backdrop="static"
+            keyboard={false}
+          >
+          <Modal.Header>
+            <Modal.Title>Update Your Tweet</Modal.Title>
+          </Modal.Header>
+
+          <Modal.Body>
+            <form onSubmit={updateTweetHandler} className = "updateForm" >
+              
+                <label>Tweet Text:</label>
+                <textarea name="updateTweetText" id="" cols="80" rows="5" 
+                defaultValue={editTweet} required></textarea>
+              <Button variant="primary" type='submit' className='updateBtn'>Save Changes</Button>
+
+            </form>
+
+          </Modal.Body>
+
+          <Modal.Footer>
+
+          </Modal.Footer>
+        </Modal>
 
     </div>
     

@@ -1,6 +1,7 @@
 
  .container-fluid{
   display: flex;
+  height: calc(100vh);
   padding: 0%;
 }
 .spinner-div{
@@ -27,17 +28,21 @@
 
 .center-box{
   width: 100%;
+  height: calc(100vh);
   background-color: bisque;
+  overflow: hidden;
 }
 .inner-box{
-  width: clamp(210px,80%,80%);
+  width: clamp(210px,70%,70%);
+  height: 100%;
 }
 .navv{
   background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: flex-start !important;
-  justify-content: flex-start !important;
+  align-items: flex-start ;
+  justify-content: flex-start ;
+  padding-left: 15px;
 }
 .cover-img{
   background-repeat: no-repeat;
@@ -48,17 +53,17 @@
 .profile-content{
   margin-top: 15px;
   width: 100%;
-  background-color: aqua;
+  overflow: scroll;
+  height: 100%;
 }
 .images-box{
   height: 250px;
-  background-color: rgb(180, 180, 255);
   position: relative;
 }
 .cover-image-box{
   width: 100%;
   height: 100%;
-  background-color: #F4F4F4;
+  background-color: #cbcbcb;
   display: flex;
   align-items: flex-end;
   justify-content: flex-end;
@@ -96,4 +101,18 @@
 .profile-details{
   margin-top: 60px;
   padding-left: 20px;
+}
+.tweets-container{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding: 10px 0px;
+  height: auto;
+  padding-bottom: 150px;
+}
+.display-tweets{
+  width: 70%;
+}
+.tweet-options{
+  display: flex;
 }
