@@ -442,7 +442,21 @@ setAllData(response.data.data)
 
   <div className="tweets-display-container">
     {(allData && allData?.length !== 0)?
-      <div>hit</div>
+      <div className='all-tweets'>
+        {allData.map((eachData,i) => (
+            <div className="tweet" key={i}>
+              <div className="tweet-info">
+                <img src={eachData?.profilePhoto} alt="profilePic" width="50" height = "50" />
+                <div>
+                  <span className='username'>{eachData?.userFirstName} {eachData.userLastName}</span><br />
+                  <span className='date'>.{eachData?.createdOn.split('T')[0]}</span>
+                </div>
+              </div>
+              
+            </div>
+          )
+        )}
+      </div>
     :null}
   </div>{/* tweets-display-container */}
 

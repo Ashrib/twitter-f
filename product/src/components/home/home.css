@@ -89,5 +89,33 @@
 .tweets-display-container{
   border: 1px solid red;
   width: clamp(200px,60%,500px);
-  margin-top: 25px;
+  margin-top: 20px;
+}
+/* .all-tweets,.tweet{
+  width: inherit;
+} */
+.tweet{
+  margin-top: 7px;
+  padding: 10px 10px;
+  background-color: aliceblue;
+}
+.tweet-info{
+  background-color: aqua;
+  display: flex;
+}
+.tweet-info>img{
+  border-radius: 50%;
+  margin-right: 7px;
+}
+/* .tweet-info>div{
+  display: flex;
+  flex-direction: column;
+} */
+.username{
+  text-transform: capitalize;
+  font-weight: 600;
+}
+.date{
+  padding-top: 0px;
+  font-size: 0.8em;
 }
