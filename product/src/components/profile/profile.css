@@ -1,272 +1,99 @@
-.nav-bar{
-    padding-left: 12%;
-    background-color: white;
-    width: 72%;
-    padding-top: 10px;
-    
 
+ .container-fluid{
+  display: flex;
+  padding: 0%;
+}
+.spinner-div{
+  position: absolute;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.171);
+  height: calc(100vh);
+  width: calc(100vw);
+  display: none;
+  top: 0;
+}
+.spinner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 0;
+  min-height: calc(100vh);
+}
+.side-nav{
+  background-color: blue;
+  height: calc(100vh);
+  width: 70px;
 }
 
-.profile-centre-div{
-    overflow-y: scroll;
-    height: 90vh;
-
+.center-box{
+  width: 100%;
+  background-color: bisque;
 }
-
-.nav-bar h4{
-    font-size: 18px;
+.inner-box{
+  width: clamp(210px,80%,80%);
 }
-
-.nav-bar p{
-    padding: 0;
-    position: relative;
-    top: -10px;
-    font-weight: 500;
-    color: rgba(128, 128, 128, 0.726);
-    font-size: 14px;
+.navv{
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
 }
-.profile-sec{
-    padding-left: 10%;
-  
+.cover-img{
+  background-repeat: no-repeat;
+  background-size:cover;
+  image-rendering:pixelated;
+  background-position:50% 50%;
 }
-
-.coverPhoto{
-    background-color: rgba(128, 128, 128, 0.24);
-    width: 70%;
-    height: 230px;
-    
-
+.profile-content{
+  margin-top: 15px;
+  width: 100%;
+  background-color: aqua;
 }
-
-
-
-
-
-
-.profilePhoto{
-    margin-left: 20px;
-  
+.images-box{
+  height: 250px;
+  background-color: rgb(180, 180, 255);
+  position: relative;
 }
-
-.profilePhoto img{
-    border-radius: 50%;
-    -ms-transform: translateZ(0); /* IE 9 */
-    -webkit-transform: translateZ(0); /* Chrome, Safari, Opera */
-    transform: translateZ(0);
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;         /* Firefox */
-    image-rendering:   -o-crisp-edges;         /* Opera */
-    image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
-    image-rendering: crisp-edges;
-    -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
-    border: 4px solid white;
-    position: relative;
-    top: -100px;
-    background-color: white;
+.cover-image-box{
+  width: 100%;
+  height: 100%;
+  background-color: #F4F4F4;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding-right: 15px;
+  padding-bottom: 15px;
 }
-
-.userDetails{
-    position: relative;
-    top: -100px;
-    padding-left: 10px;
+.profile-image-box{
+  height: 160px;
+  width: 160px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: -60px;
+  left: 3%;
+  border: 3px solid white;
 }
-
-
-.userDetails p{
-    line-height: 0px;
+.p-img{
+  border-radius: 50%;
+  height:100%;
+  width: 100%;
+  position: relative;
 }
-
-.userDetails p:nth-child(1){
-    color: black;
-    font-weight: bold;
-    text-transform: capitalize;
+.profile-image-box>.camera-icon{
+  position: absolute;
+  bottom: 7%;
+  right: 13%;
+  cursor: pointer;
+  font-size: 2.6em;
+  border-radius: 50%;
+  padding: 5px;
+  border: 1px solid white;
 }
-
-.userDetails p:nth-child(2){
-    color: rgba(128, 128, 128, 0.801);
-    font-weight: 500;
-    font-size: 14px;
-    position: relative;
-    top: -10px;
+.profile-image-box>.camera-icon:hover{
+  padding: 4px;
 }
-.userDetails p:nth-child(3){
-    position: relative;
-    top: -15px;
+.profile-details{
+  margin-top: 60px;
+  padding-left: 20px;
 }
-
-.userDate{
-    color: gray;
-    font-weight: 500;
-    padding-left: 4px;
-    font-size: 14px;
-}
-
-.profile-posts-div{
-    position: relative;
-    top: -100px;
-
-}
-
-.modifying-div{
-    margin-left: auto;
-}
-
-.modifying-div img{
-    cursor: pointer;
-}
-
-.updateForm textarea{
-    display: block;
-    width: 90%;
-    margin-top: 5px;
-    margin-left: 5px;
-    border: 1px solid rgba(128, 128, 128, 0.247);
-    border-radius: 10px;
-    padding: 5px 5px;
-    resize: none;
-  
-}
-  
-  .updateForm input:focus{
-    outline: 3px solid dodgerblue;
-  }
-  .updateForm textarea:focus{
-    outline: 1px solid dodgerblue;
-  }
-  
-  .updateForm label{
-    font-weight: bold;
-  }
-  
-  .updateBtn{
-    width: 40%;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  
-  }
-
-
-  .updatePhoto{
-    position: relative;
-    top: -50px !important;
-    left: -60px;
-    border: none !important;
-    background-color: rgba(128, 128, 128, 0.548);
-    padding: 5px !important;
-    cursor: pointer;
-
-  }
-
-  .plus-icon{
-    height: 30px;
-    width: 30px;
-  }
-
-  .modal-body {
-    width: 100% !important;
-    text-align: center;
-  }
-
-  .upload-btn{
-    background-color:rgba(30, 143, 255, 0.192);
-    border-radius: 5px!important;
-    color: dodgerblue;
-    padding: 10px 160px;
-    cursor: pointer;
-  }
-
-  .cover-btn{
-    background-color: white !important;
-    border: 0px !important;
-    float: right;
-    position: relative;
-    top: 150px;
-    margin-right: 20px;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    color: #3f3f3f !important;
-    border-radius: 8px !important;
-    cursor: pointer;
-    z-index: 2;
-
-
-
-  }
-
-  .camera-icon{
-    margin-top: 2px;
-    margin-right: 5px;
-
-  }
-
-  .drp-items{
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-    width: 40%;
-    margin-left: auto;
-    margin-right: 20px;
-    position: relative;
-    top: -16px;
-    background-color: white;
-    z-index: 2;
-    border-radius: 5px;
-    padding-left: 10px;
-    display: none;
-
-  }
-
-  .drp p {
-    color: white !important;
-    font-size: 15px;
-    padding-left: 12px;
-    cursor: pointer;
-   
-  }
-
-  .menu{
-    width: 28%;
-
-  }
-
-
-
-  .drp-items p:nth-child(3){
-    position: relative;
-    top: -15px;
-  }
-
-  .upload-icon{
-    font-size: 30px;
-    margin-right: 10px;
-    position: relative;
-    bottom: 3px;
-
-  }
-
-
-
-  @media screen and (max-width:800px) {
-    .nav-bar{
-        width: 90%;
-    }
-
-
-    .coverPhoto{
-        width: 90%;
-        height: calc(30vh);
-    }
-    
-  }
-
-  @media screen and (max-width:500px) {
-    .nav-bar{
-        width: 100%;
-    }
-
-
-    .coverPhoto{
-        width: 100%;
-        height: calc(30vh);
-    }
-    
-  }
