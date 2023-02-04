@@ -338,8 +338,10 @@ function Profile() {
         <div className="home"><a href="/"><img src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" height="40" width="40"  /></a> </div>
         <div className="profile"><a href="/profile"><FaUserAlt style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a></div>
         <Dropdown>
-          <Dropdown.Toggle className='menuBtn' id="dropdown-button-dark-example1" variant="secondary">
-            <img src={state?.user?.profileImage} alt='account' height="40" width="40" title = "logout"/>
+          <Dropdown.Toggle style={{backgroundColor:'white',color:'black',borderColor:'white'}} 
+          className='menuBtn' id="dropdown-button-dark-example1" variant="secondary">
+
+            <img src={state?.user?.profileImage} style={{borderRadius:'50%'}} alt='account' height="40" width="40" title = "logout"/>
           </Dropdown.Toggle>
 
           <Dropdown.Menu >
