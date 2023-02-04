@@ -492,7 +492,7 @@ function Profile() {
       <Modal
             show={show}
             backdrop="static"
-            keyboard={false}
+            keyboard={false}   
           >
           <Modal.Header>
             <Modal.Title>Update Your Tweet</Modal.Title>
@@ -502,7 +502,7 @@ function Profile() {
             <form onSubmit={updateTweetHandler} className = "updateForm" >
               
                 <label>Tweet Text:</label>
-                <textarea name="updateTweetText" id="" cols="80" rows="5" 
+                <textarea name="updateTweetText" id="update-textarea" rows="5" 
                 defaultValue={editTweet} required></textarea>
               <Button variant="primary" type='submit' className='updateBtn'>Save Changes</Button>
 

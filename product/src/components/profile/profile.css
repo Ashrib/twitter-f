@@ -120,6 +120,9 @@
   display: flex;
 }
 
+#update-textarea{
+  width: 90%;
+}
 
 @media screen and (max-width: 630px) {
   /* .tweets-container{
