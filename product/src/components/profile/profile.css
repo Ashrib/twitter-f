@@ -71,8 +71,8 @@
   padding-bottom: 15px;
 }
 .profile-image-box{
-  height: 160px;
-  width: 160px;
+  height: clamp(80px,50%,160px);
+  width: clamp(80px,50%,160px);
   border-radius: 50%;
   position: absolute;
   bottom: -60px;
@@ -115,4 +115,15 @@
 }
 .tweet-options{
   display: flex;
+}
+
+
+@media screen and (max-width: 630px) {
+  /* .tweets-container{
+    justify-content: start;
+
+  } */
+  .display-tweets{
+    width: 100%;
+  }
 }

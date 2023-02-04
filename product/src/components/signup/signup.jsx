@@ -42,24 +42,25 @@ function Signup() {
 
 
     const signUpHandler = (event)=>{
-        event.preventDefault()
+        event.preventDefault();
         let errorDiv = document.getElementById("error")
         let alertDiv = document.getElementById("alert")
 
-        let imageRef = ref(storage,`profileImages/${imageUpload?.name + v4()}`);
+        // let imageRef = ref(storage,`profileImages/${imageUpload?.name + v4()}`);
 
-    uploadBytes(imageRef, imageUpload).then((snapshot) =>{
-      console.log("Firebase Storage",snapshot)
+    // uploadBytes(imageRef, imageUpload).then((snapshot) =>{
+    //   console.log("Firebase Storage",snapshot)
 
-      getDownloadURL(snapshot.ref)
-      .then((url) =>{
-        console.log("ImageURL", url)
+    //   getDownloadURL(snapshot.ref)
+    //   .then(
+        // () =>{
+        // console.log("ImageURL", url)
             axios.post(`${baseUrl}/api/v1/signup`, {
                 firstName: firstName,
                 lastName: lastName,
                 email:email,
                 password:password,
-                profileImage:url
+                profileImage:null
             })
 
             .then((response) => {
@@ -75,17 +76,18 @@ function Signup() {
             setShowError(error.message);
             });
 
-        })
-        .catch((e) =>{
-            console.log("Image Url Error", e)
+        // }
+        // )
+    //     .catch((e) =>{
+    //         console.log("Image Url Error", e)
+    // 
+    //     })
     
-        })
-    
-    })
-    .catch((e) =>{
-      console.log("Storage Error", e)
-
-    })
+    // })
+//     .catch((e) =>{
+//       console.log("Storage Error", e)
+// 
+//     })
     }
     
     const closeHandler = () =>{
@@ -132,9 +134,9 @@ function Signup() {
                             setPassword(e.target.value)
 
                         }} />
-                    <input ref={fifthRef} type="file" required  name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' onChange={(e) => {
+                    {/* <input ref={fifthRef} type="file" required  name='profilePic' accept='image/png, image/jpg, image.jpeg'  id='imgInput' onChange={(e) => {
                        setImageUpload(e.target.files[0])
-                    }}/>
+                    }}/> */}
                     <div className="btn-div">
                     <button className="signup-btn" type="submit">Sign UP</button>
                     </div>
