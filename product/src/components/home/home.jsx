@@ -262,9 +262,9 @@ setAllData(response.data.data)
     </div>
   </div>
 <div className="side-nav">
-  <div className="home"><a href="/"><img src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" height="40" width="40"  /></a> </div>
-  <div className="profile"><a href="/profile"><FaUserAlt style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a></div>
-  <div onClick={logoutHandler}><BiLogOut style={{fontSize:"35px",cursor:"pointer",color:"#3f3f3f"}} title='logout' /></div>
+  <div className="home"><a href="/"><img className='bird-img' src="https://img.icons8.com/fluency/512/twitter.png" alt="twitter logo" /></a> </div>
+  <div className="profile"><a href="/profile"><FaUserAlt style={{fontSize:"2em",cursor:"pointer",color:"#3f3f3f"}} title='Profile'></FaUserAlt></a></div>
+  <div onClick={logoutHandler}><BiLogOut style={{fontSize:"2em",cursor:"pointer",color:"#3f3f3f"}} title='logout' /></div>
 </div>
 {/* Center div */}
 <div className="center-body">

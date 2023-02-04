@@ -29,6 +29,10 @@
   width: 70px;
   padding-top: 15px;
 }
+.bird-img{
+  width: clamp(30px,80%,60px);
+  height: clamp(20px,80%,50px);
+}
 .center-body{
   background-color: #eeeeee;
   height: calc(100vh);

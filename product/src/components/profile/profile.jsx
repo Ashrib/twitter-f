@@ -410,7 +410,7 @@ function Profile() {
               <div className="cover-image-box" style={{backgroundImage:`url(${state?.user?.coverPhoto})`}}>
               <Dropdown className='drp'>
                   <Dropdown.Toggle className='cover-btn' id="dropdown-button-dark-example1" variant="secondary">
-                      <BsFillCameraFill className='camera-icon'/> Edit Cover Photo
+                      <BsFillCameraFill className='camera-icon'/><span className="btn-text"> Edit Cover Photo</span>
                   </Dropdown.Toggle>
 
                   <Dropdown.Menu variant="dark" className='menu'>

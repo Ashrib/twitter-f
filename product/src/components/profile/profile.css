@@ -130,3 +130,15 @@
     width: 100%;
   }
 }
+@media screen and (max-width: 550px) {
+  
+  .btn-text{
+    display: none;
+  }
+}
+@media screen and (max-width: 800px) {
+  
+  .inner-box{
+    width: 100%;
+  }
+}
