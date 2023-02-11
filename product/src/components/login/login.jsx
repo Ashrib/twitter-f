@@ -51,16 +51,12 @@ function Login() {
               payload: response.data.profile
             })
 
-        
-            
-
+      
           }, (error) => {
             console.log(error);
             console.log(error.message)
             alertDiv.style.display = "flex";
-            setShowError(error.message);
-            
-            
+            setShowError(error.message+"! "+error.response.data.message);
             
           });
       

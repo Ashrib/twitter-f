@@ -52,7 +52,7 @@ router.post("/signup", (req, res) => {
 
             if (user) { // user already exist
                 console.log("user already exist: ", user);
-                res.status(400).send({ message: "User already exist, Please try a different email" });
+                res.status(400).send({ message: ".User already exist, Please try a different email!" });
                 return;
 
             } else { // user not already exist
@@ -73,7 +73,7 @@ router.post("/signup", (req, res) => {
                                 res.status(201).send({ message: "user is created" });
                             } else {
                                 console.log("db error: ", err);
-                                res.status(500).send({ message: "Internal server error" });
+                                res.status(500).send({ message: ".Internal server error!" });
                             }
                         });
                 })
@@ -150,19 +150,19 @@ router.post("/login", (req, res) => {
                             return;
                         } else {
                             console.log("password did not match");
-                            res.status(401).send({ message: "Incorrect email or password" });
+                            res.status(401).send({ message: ".Incorrect email or password!" });
                             return;
                         }
                     })
 
                 } else { // user not already exist
                     console.log("user not found");
-                    res.status(401).send({ message: "Incorrect email or password" });
+                    res.status(401).send({ message: ".Incorrect email or password!" });
                     return;
                 }
             } else {
                 console.log("db error: ", err);
-                res.status(500).send({ message: "login failed, please try later" });
+                res.status(500).send({ message: ".login failed, please try later!" });
                 return;
             }
         })
@@ -202,7 +202,7 @@ router.post('/forget-password', async (req, res) => {
             "firstName lastName email",
         ).exec()
 
-        if (!user) throw new Error("User not found")
+        if (!user) throw new Error("User not found!")
 
         const nanoid = customAlphabet('1234567890', 5)
         const OTP = nanoid();

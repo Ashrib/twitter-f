@@ -70,10 +70,10 @@ function Signup() {
                 
 
             }, (error) => {
-                console.log(error);
-            console.log(error.message)
+                console.log(error.response.data.message);
+            // console.log(error.message)
             alertDiv.style.display = "flex";
-            setShowError(error.message);
+            setShowError(error.message+"! "+error.response.data.message);
             });
 
         // }
